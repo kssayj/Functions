@@ -15,7 +15,6 @@ double power(double base, int exponent) {
         return result;
     }
     else {
-        // Handling negative exponents by taking the reciprocal of the result
         double result = 1.0;
         for (int i = 0; i < -exponent; ++i) {
             result *= base;
