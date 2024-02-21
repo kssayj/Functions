@@ -25,9 +25,8 @@ double power(double base, int exponent) {
 }
 int main()
 {
-	setlocale(LC_ALL, "ru");
     int a, b;
-	std::cout << "введите 2 числа: "; std::cin >> a >> b;
+	std::cout << "enter 2 numbers: "; std::cin >> a >> b;
 	int c = sum(a, b);
 	std::cout << a << " + " << b << " = " << c << std::endl;
 	std::cout << a << " - " << b << " = " << diff(a, b) << std::endl;
@@ -36,10 +35,10 @@ int main()
 
     double base;
     int exponent;
-    std::cout << "¬ведите число: "; std::cin >> base;
-    std::cout << "¬ведите степень: "; std::cin >> exponent;
+    std::cout << "Enter a number: "; std::cin >> base;
+    std::cout << "Enter the degree: "; std::cin >> exponent;
     double result = power(base, exponent);
-    std::cout << base << " в степени " << exponent << " равно " << result << std::endl;
+    std::cout << base << " in degree " << exponent << " = " << result << std::endl;
 }
 int sum(int a, int b)
 {
