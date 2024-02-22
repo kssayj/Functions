@@ -50,9 +50,22 @@ int minValueIn(int arr[], const int n)
 	}
 	return min;
 }
-int sort(const void* a, const void* b)
+void sort(int arr[], const int n)
 {
-	return (*(int*)a - *(int*)b);
+	int min = 0; 
+	int tmp = 0; 
+	for (int i = 0; i < n; i++)
+	{
+		min = i; 
+		for (int j = i + 1; j < n; j++)
+			min = (arr[j] < arr[min]) ? j : min;
+		if (i != min)
+		{
+			tmp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = tmp;
+		}
+	}
 }
 void ShiftLeft(int arr[], const int n, int shiftAmount)
 {
@@ -97,8 +110,8 @@ int main()
 	std::cout << "The arithmetic mean: " << avg(arr, n) << std::endl;
 	std::cout << "Max value: " << maxValueIn(arr, n) << std::endl;
 	std::cout << "Min value: " << minValueIn(arr, n) << std::endl;
-	qsort(arr, n, sizeof(int), sort);
 	std::cout << "Sort array: ";
+	sort(arr,n);
 	print(arr, n);
 	int shiftAmount;
 	std::cout << "Enter the number of items to cycle: "; std::cin >> shiftAmount;
