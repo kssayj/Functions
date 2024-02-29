@@ -1,6 +1,92 @@
 #include <stdlib.h>
 #include<iostream>
 
+void fillrand(int arr[], const int n, int minrand = 0, int maxrand = 100);
+void fillrand(char arr[], const int n, char minrand = 'A', char maxrand = 'Z');
+void fillrand(double arr[], const int n, double minrand = 0.0, double maxrand = 1.0);
+void print(const int arr[], const int n);
+void print(const char arr[], const int n);
+void print(const double arr[], const int n);
+int sum(int arr[], const int n);
+float sum(char arr[], const int n);
+double sum(double arr[], const int n);
+float avg(int arr[], const int n);
+float avg(char arr[], const int n);
+double avg(double arr[], const int n);
+int maxValueIn(int arr[], const int n);
+char maxValueIn(char arr[], const int n);
+double maxValueIn(double arr[], const int n);
+int minValueIn(int arr[], const int n);
+char minValueIn(char arr[], const int n);
+double minValueIn(double arr[], const int n);
+void sort(int arr[], const int n);
+void sort(char arr[], const int n);
+void sort(double arr[], const int n);
+void ShiftLeft(int arr[], const int n, int shiftAmount);
+void ShiftLeft(char arr[], const int n, int shiftAmount);
+void ShiftLeft(double arr[], const int n, int shiftAmount);
+void ShiftRight(int arr[], const int n, int shiftAmount);
+void ShiftRight(char arr[], const int n, int shiftAmount);
+void ShiftRight(double arr[], const int n, int shiftAmount);
+
+int main()
+{
+	const int n = 5;
+	int intArr[n];
+	fillrand(intArr, n);
+	print(intArr, n);
+	std::cout << "The sum of the array elements: " << sum(intArr, n) << std::endl;
+	std::cout << "The arithmetic mean: " << avg(intArr, n) << std::endl;
+	std::cout << "Max value: " << maxValueIn(intArr, n) << std::endl;
+	std::cout << "Min value: " << minValueIn(intArr, n) << std::endl;
+	std::cout << "Sort array: ";
+	sort(intArr, n);
+	print(intArr, n);
+	int shiftAmount;
+	std::cout << "Enter the number of items to cycle: ";
+	std::cin >> shiftAmount;
+	std::cout << "Left shift: ";
+	ShiftLeft(intArr, n, shiftAmount);
+	std::cout << "Right shift: ";
+	ShiftRight(intArr, n, shiftAmount);
+	std::cout << std::endl;
+
+	char charArr[n];
+	fillrand(charArr, n);
+	print(charArr, n);
+	std::cout << "The sum of the array elements: " << sum(charArr, n) << std::endl;
+	std::cout << "The arithmetic mean: " << avg(charArr, n) << std::endl;
+	std::cout << "Max value: " << maxValueIn(charArr, n) << std::endl;
+	std::cout << "Min value: " << minValueIn(charArr, n) << std::endl;
+	std::cout << "Sort array: ";
+	sort(charArr, n);
+	print(charArr, n);
+	std::cout << "Enter the number of items to cycle: ";
+	std::cin >> shiftAmount;
+	std::cout << "Left shift: ";
+	ShiftLeft(charArr, n, shiftAmount);
+	std::cout << "Right shift: ";
+	ShiftRight(charArr, n, shiftAmount);
+	std::cout << std::endl;
+
+	double doubleArr[n];
+	fillrand(doubleArr, n);
+	print(doubleArr, n);
+	std::cout << "The sum of the array elements: " << sum(doubleArr, n) << std::endl;
+	std::cout << "The arithmetic mean: " << avg(doubleArr, n) << std::endl;
+	std::cout << "Max value: " << maxValueIn(doubleArr, n) << std::endl;
+	std::cout << "Min value: " << minValueIn(doubleArr, n) << std::endl;
+	std::cout << "Sort array: ";
+	sort(doubleArr, n);
+	print(doubleArr, n);
+	std::cout << "Enter the number of items to cycle: ";
+	std::cin >> shiftAmount;
+	std::cout << "Left shift: ";
+	ShiftLeft(doubleArr, n, shiftAmount);
+	std::cout << "Right shift: ";
+	ShiftRight(doubleArr, n, shiftAmount);
+	std::cout << std::endl;
+}
 void fillrand(int arr[], const int n, int minrand = 0, int maxrand = 100)
 {
 	for (int i = 0; i < n; i++)
@@ -334,64 +420,5 @@ void ShiftRight(double arr[], const int n, int shiftAmount)
 	{
 		std::cout << arr[i] << " ";
 	}
-	std::cout << std::endl;
-}
-
-int main()
-{
-	const int n = 5;
-	int intArr[n];
-	fillrand(intArr, n);
-	print(intArr, n);
-	std::cout << "The sum of the array elements: " << sum(intArr, n) << std::endl;
-	std::cout << "The arithmetic mean: " << avg(intArr, n) << std::endl;
-	std::cout << "Max value: " << maxValueIn(intArr, n) << std::endl;
-	std::cout << "Min value: " << minValueIn(intArr, n) << std::endl;
-	std::cout << "Sort array: ";
-	sort(intArr, n);
-	print(intArr, n);
-	int shiftAmount;
-	std::cout << "Enter the number of items to cycle: ";
-	std::cin >> shiftAmount;
-	std::cout << "Left shift: ";
-	ShiftLeft(intArr, n, shiftAmount);
-	std::cout << "Right shift: ";
-	ShiftRight(intArr, n, shiftAmount);
-	std::cout << std::endl;
-
-	char charArr[n];
-	fillrand(charArr, n);
-	print(charArr, n);
-	std::cout << "The sum of the array elements: " << sum(charArr, n) << std::endl;
-	std::cout << "The arithmetic mean: " << avg(charArr, n) << std::endl;
-	std::cout << "Max value: " << maxValueIn(charArr, n) << std::endl;
-	std::cout << "Min value: " << minValueIn(charArr, n) << std::endl;
-	std::cout << "Sort array: ";
-	sort(charArr, n);
-	print(charArr, n);
-	std::cout << "Enter the number of items to cycle: ";
-	std::cin >> shiftAmount;
-	std::cout << "Left shift: ";
-	ShiftLeft(charArr, n, shiftAmount);
-	std::cout << "Right shift: ";
-	ShiftRight(charArr, n, shiftAmount);
-	std::cout << std::endl;
-
-	double doubleArr[n];
-	fillrand(doubleArr, n);
-	print(doubleArr, n);
-	std::cout << "The sum of the array elements: " << sum(doubleArr, n) << std::endl;
-	std::cout << "The arithmetic mean: " << avg(doubleArr, n) << std::endl;
-	std::cout << "Max value: " << maxValueIn(doubleArr, n) << std::endl;
-	std::cout << "Min value: " << minValueIn(doubleArr, n) << std::endl;
-	std::cout << "Sort array: ";
-	sort(doubleArr, n);
-	print(doubleArr, n);
-	std::cout << "Enter the number of items to cycle: ";
-	std::cin >> shiftAmount;
-	std::cout << "Left shift: ";
-	ShiftLeft(doubleArr, n, shiftAmount);
-	std::cout << "Right shift: ";
-	ShiftRight(doubleArr, n, shiftAmount);
 	std::cout << std::endl;
 }
